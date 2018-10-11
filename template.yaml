@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  fraction-hen
+
+  Sample SAM Template for fraction-hen
+
+Resources:
+
+  AlexaHandlerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: build/libs/fraction-hen-all.jar
+      Handler: com.scorpipede.fractionhen.FractionHenLambda::handleRequest
+      Runtime: java8
+      MemorySize: 512
+      Timeout: 60
+      Events:
+        AlexaRequest:
+          Type: AlexaSkill

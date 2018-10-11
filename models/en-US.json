@@ -1,0 +1,109 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "fraction hen",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "GetLcm",
+          "slots": [
+            {
+              "name": "first",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "it's {first}",
+                "it is {first}",
+                "{first}"
+              ]
+            },
+            {
+              "name": "second",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "it's {second}",
+                "it is {second}",
+                "{second}"
+              ]
+            }
+          ],
+          "samples": [
+            "compute the least common multiple of {first} and {second}",
+            "compute the least common multiple for {first} and {second}",
+            "compute the L.C.M. of {first} and {second}",
+            "compute the L.C.M. for {first} and {second}",
+            "compute a least common multiple"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "GetLcm",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "first",
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1229120341787.293830689795"
+              }
+            },
+            {
+              "name": "second",
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1229120341787.1518623923300"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1229120341787.293830689795",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is the first number?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1229120341787.1518623923300",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is the second number?"
+          }
+        ]
+      }
+    ]
+  }
+}

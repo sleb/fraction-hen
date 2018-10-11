@@ -1,0 +1,19 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "Fraction Hen"
+        }
+      }
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-west-2:937638153365:function:fraction-hen-AlexaHandlerFunction-OM4JO36Z1JB4"
+        }
+      }
+    },
+    "manifestVersion": "1.0"
+  }
+}
