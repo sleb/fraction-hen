@@ -2,9 +2,13 @@ package com.scorpipede.fractionhen.handlers;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
-import com.amazon.ask.model.*;
-import com.scorpipede.fractionhen.util.Prompts;
+import com.amazon.ask.model.Intent;
+import com.amazon.ask.model.IntentRequest;
+import com.amazon.ask.model.Response;
+import com.amazon.ask.model.Slot;
+import dagger.Reusable;
 
+import javax.inject.Inject;
 import java.util.Map;
 import java.util.Optional;
 
@@ -17,7 +21,12 @@ import static com.scorpipede.fractionhen.util.Slots.FIRST;
 import static com.scorpipede.fractionhen.util.Slots.SECOND;
 import static java.lang.String.format;
 
+@Reusable
 public class GetLcmIntentHandler implements RequestHandler {
+
+    @Inject
+    GetLcmIntentHandler() {
+    }
 
     @Override
     public boolean canHandle(HandlerInput handlerInput) {
