@@ -43,8 +43,11 @@ public class GetLcmIntentHandler implements RequestHandler {
             int first = parseInt(slots.get(FIRST));
             int second = parseInt(slots.get(SECOND));
 
+            String prompt = format(LCM, first, second, lcm(first, second));
+
             return handlerInput.getResponseBuilder()
-                .withSpeech(format(LCM, first, second, lcm(first, second)))
+                .withSpeech(prompt)
+                .withSimpleCard("Least Common Multiple", prompt)
                 .withShouldEndSession(true)
                 .build();
         } else {

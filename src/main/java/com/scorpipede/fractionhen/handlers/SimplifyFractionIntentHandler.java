@@ -15,13 +15,14 @@ import static com.amazon.ask.model.DialogState.COMPLETED;
 import static com.amazon.ask.request.Predicates.intentName;
 import static com.scorpipede.fractionhen.util.Factors.gcd;
 import static com.scorpipede.fractionhen.util.Intents.SIMPLIFY_FRACTION;
+import static com.scorpipede.fractionhen.util.Prompts.SIMPLIFIED;
 import static com.scorpipede.fractionhen.util.Slots.*;
 import static java.lang.String.format;
 
 public class SimplifyFractionIntentHandler implements RequestHandler {
 
     @Inject
-    public SimplifyFractionIntentHandler() {
+    SimplifyFractionIntentHandler() {
     }
 
     @Override
@@ -41,17 +42,28 @@ public class SimplifyFractionIntentHandler implements RequestHandler {
             int denominator = parseInt(slots.get(DENOMINATOR));
             int gcd = gcd(numerator, denominator);
 
+            int simplifiedNumerator = numerator / gcd;
+            int simplifiedDenominator = denominator / gcd;
+
             return handlerInput.getResponseBuilder()
                 .withSpeech(
                     format(
-                        "%s over %s simplifies to %s over %s",
-                        numerator, denominator, numerator / gcd, denominator / gcd
+                        SIMPLIFIED,
+                        numerator, denominator, simplifiedNumerator, simplifiedDenominator
+                    )
+                )
+                .withSimpleCard(
+                    "Simplified Fraction",
+                    format(
+                        "%s/%s simplifies to %s/%s",
+                        numerator, denominator, simplifiedNumerator, simplifiedDenominator
                     )
                 )
                 .build();
         } else {
             return handlerInput.getResponseBuilder()
                 .addDelegateDirective(intent)
+                .withShouldEndSession(true)
                 .build();
         }
     }
