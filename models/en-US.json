@@ -52,6 +52,34 @@
             "compute the L.C.M. for {first} and {second}",
             "compute a least common multiple"
           ]
+        },
+        {
+          "name": "SimplifyFraction",
+          "slots": [
+            {
+              "name": "numerator",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "it's {numerator}",
+                "it is {numerator}",
+                "{numerator}"
+              ]
+            },
+            {
+              "name": "denominator",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "it's {denominator}",
+                "it is {denominator}",
+                "{denominator}"
+              ]
+            }
+          ],
+          "samples": [
+            "simplify {numerator} over {denominator}",
+            "simplify",
+            "simplify a fraction"
+          ]
         }
       ],
       "types": []
@@ -82,6 +110,31 @@
               }
             }
           ]
+        },
+        {
+          "name": "SimplifyFraction",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "numerator",
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.516029776387.1304695612276"
+              }
+            },
+            {
+              "name": "denominator",
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.516029776387.1319746306451"
+              }
+            }
+          ]
         }
       ]
     },
@@ -101,6 +154,24 @@
           {
             "type": "PlainText",
             "value": "What is the second number?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.516029776387.1319746306451",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is the denominator?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.516029776387.1304695612276",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is the numerator?"
           }
         ]
       }

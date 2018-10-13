@@ -5,5 +5,6 @@ public interface Intents {
     String FALLBACK = "AMAZON.FallbackIntent";
     String GET_LCM = "GetLcm";
     String HELP = "AMAZON.HelpIntent";
+    String SIMPLIFY_FRACTION = "SimplifyFraction";
     String STOP = "AMAZON.StopIntent";
 }

@@ -16,6 +16,7 @@ class SkillModule {
         GetLcmIntentHandler getLcmIntentHandler,
         HelpIntentHandler helpIntentHandler,
         LaunchRequestHandler launchRequestHandler,
+        SimplifyFractionIntentHandler simplifyFractionIntentHandler,
         StopAndCancelIntentHandler stopAndCancelIntentHandler
     ) {
         return Skills.standard()
@@ -24,6 +25,7 @@ class SkillModule {
             .addRequestHandler(getLcmIntentHandler)
             .addRequestHandler(helpIntentHandler)
             .addRequestHandler(launchRequestHandler)
+            .addRequestHandler(simplifyFractionIntentHandler)
             .addRequestHandler(stopAndCancelIntentHandler)
             .build();
     }

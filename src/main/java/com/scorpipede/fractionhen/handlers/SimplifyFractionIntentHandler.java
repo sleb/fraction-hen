@@ -6,7 +6,6 @@ import com.amazon.ask.model.Intent;
 import com.amazon.ask.model.IntentRequest;
 import com.amazon.ask.model.Response;
 import com.amazon.ask.model.Slot;
-import dagger.Reusable;
 
 import javax.inject.Inject;
 import java.util.Map;
@@ -14,22 +13,20 @@ import java.util.Optional;
 
 import static com.amazon.ask.model.DialogState.COMPLETED;
 import static com.amazon.ask.request.Predicates.intentName;
-import static com.scorpipede.fractionhen.util.Factors.lcm;
-import static com.scorpipede.fractionhen.util.Intents.GET_LCM;
-import static com.scorpipede.fractionhen.util.Prompts.LCM;
+import static com.scorpipede.fractionhen.util.Factors.gcd;
+import static com.scorpipede.fractionhen.util.Intents.SIMPLIFY_FRACTION;
 import static com.scorpipede.fractionhen.util.Slots.*;
 import static java.lang.String.format;
 
-@Reusable
-public class GetLcmIntentHandler implements RequestHandler {
+public class SimplifyFractionIntentHandler implements RequestHandler {
 
     @Inject
-    GetLcmIntentHandler() {
+    public SimplifyFractionIntentHandler() {
     }
 
     @Override
     public boolean canHandle(HandlerInput handlerInput) {
-        return handlerInput.matches(intentName(GET_LCM));
+        return handlerInput.matches(intentName(SIMPLIFY_FRACTION));
     }
 
     @Override
@@ -40,12 +37,17 @@ public class GetLcmIntentHandler implements RequestHandler {
         if (intentRequest.getDialogState() == COMPLETED) {
             Map<String, Slot> slots = intent.getSlots();
 
-            int first = parseInt(slots.get(FIRST));
-            int second = parseInt(slots.get(SECOND));
+            int numerator = parseInt(slots.get(NUMERATOR));
+            int denominator = parseInt(slots.get(DENOMINATOR));
+            int gcd = gcd(numerator, denominator);
 
             return handlerInput.getResponseBuilder()
-                .withSpeech(format(LCM, first, second, lcm(first, second)))
-                .withShouldEndSession(true)
+                .withSpeech(
+                    format(
+                        "%s over %s simplifies to %s over %s",
+                        numerator, denominator, numerator / gcd, denominator / gcd
+                    )
+                )
                 .build();
         } else {
             return handlerInput.getResponseBuilder()

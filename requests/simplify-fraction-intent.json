@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "session": {
+    "new": false,
+    "sessionId": "amzn1.echo-api.session.0fdcf982-1262-43a2-ab6c-ff8c580f48fa",
+    "application": {
+      "applicationId": "amzn1.ask.skill.da522fad-d397-4297-9c14-ac9f8e09e4fa"
+    },
+    "user": {
+      "userId": "amzn1.ask.account.AF4MLFKCMWULD7RJCVUB5IBTWIBQFKVLRDUYJMMU3IYFXUI2CRRFGOUFHMVYYC6DLKBD7KN5UGGQYLSC6STC4UHAW5RYSDH6GFC4NR274WYYO54BQAWP424BJTYQHCPMKAU7UURTV24IBEIOHWY4GO6FCDEINVCYYKJA3UJXGIQ4CAJQHLNJ3ATCR7TBAE4C33OKXBZM7B6YNZQ"
+    }
+  },
+  "context": {
+    "System": {
+      "application": {
+        "applicationId": "amzn1.ask.skill.da522fad-d397-4297-9c14-ac9f8e09e4fa"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.AF4MLFKCMWULD7RJCVUB5IBTWIBQFKVLRDUYJMMU3IYFXUI2CRRFGOUFHMVYYC6DLKBD7KN5UGGQYLSC6STC4UHAW5RYSDH6GFC4NR274WYYO54BQAWP424BJTYQHCPMKAU7UURTV24IBEIOHWY4GO6FCDEINVCYYKJA3UJXGIQ4CAJQHLNJ3ATCR7TBAE4C33OKXBZM7B6YNZQ"
+      },
+      "device": {
+        "deviceId": "amzn1.ask.device.AHFNHSNXXCKKKOELJYVVJPS5MAGVRDIRV66ZUA2PKIK4P37MS5SOUVHJBMUUUGPMUFWM6RN6PM4IHBOI6AFKJUMWXB5AHSDC66JNLQYSTLKYM4HJ4VGUBPB5UNEIR7WFEUZS3TJZQOMSGWPVORI6VLJQ26LQ",
+        "supportedInterfaces": {}
+      },
+      "apiEndpoint": "https://api.amazonalexa.com",
+      "apiAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLmRhNTIyZmFkLWQzOTctNDI5Ny05YzE0LWFjOWY4ZTA5ZTRmYSIsImV4cCI6MTUzOTQxODQ3NiwiaWF0IjoxNTM5NDE0ODc2LCJuYmYiOjE1Mzk0MTQ4NzYsInByaXZhdGVDbGFpbXMiOnsiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUhGTkhTTlhYQ0tLS09FTEpZVlZKUFM1TUFHVlJESVJWNjZaVUEyUEtJSzRQMzdNUzVTT1VWSEpCTVVVVUdQTVVGV002Uk42UE00SUhCT0k2QUZLSlVNV1hCNUFIU0RDNjZKTkxRWVNUTEtZTTRISjRWR1VCUEI1VU5FSVI3V0ZFVVpTM1RKWlFPTVNHV1BWT1JJNlZMSlEyNkxRIiwidXNlcklkIjoiYW16bjEuYXNrLmFjY291bnQuQUY0TUxGS0NNV1VMRDdSSkNWVUI1SUJUV0lCUUZLVkxSRFVZSk1NVTNJWUZYVUkyQ1JSRkdPVUZITVZZWUM2RExLQkQ3S041VUdHUVlMU0M2U1RDNFVIQVc1UllTREg2R0ZDNE5SMjc0V1lZTzU0QlFBV1A0MjRCSlRZUUhDUE1LQVU3VVVSVFYyNElCRUlPSFdZNEdPNkZDREVJTlZDWVlLSkEzVUpYR0lRNENBSlFITE5KM0FUQ1I3VEJBRTRDMzNPS1hCWk03QjZZTlpRIn19.X7CBzVpkCH8qUjtmqzL7G26GKxAm9hctksl4SYkfuWgt_19XHBFIfnFW_-LhUzWYg2anwUmaRPsy0Dz2y3f8ys1HCnC9prd7Zc6cEQoqWB8dYcy-9xaBpRmHn10QWQjkaTQGymaGQYD-IODl7KdsvEI5qwbSbrgdZB1p7vJsW7DMIti_u09qAwqjBbN-efHyq7UcX77wyQxyBNvosjH3DhSrxORz3k5Qhaz9x5-FCDNC3ljS3j3K4vh83d_gWiCRU1BTHDcxbspWP_wG3IJlkvX3M9R5jMCCofq_Ud4M7Misk2TOTM8DpSktHgMiVptJq2dIHnprkJqRtYuhcBnreA"
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "amzn1.echo-api.request.dea0b02f-e341-4628-932f-c8725f42bcf0",
+    "timestamp": "2018-10-13T07:14:36Z",
+    "locale": "en-US",
+    "intent": {
+      "name": "SimplifyFraction",
+      "confirmationStatus": "NONE",
+      "slots": {
+        "numerator": {
+          "name": "numerator",
+          "value": "10",
+          "confirmationStatus": "NONE",
+          "source": "USER"
+        },
+        "denominator": {
+          "name": "denominator",
+          "value": "4",
+          "confirmationStatus": "NONE",
+          "source": "USER"
+        }
+      }
+    },
+    "dialogState": "IN_PROGRESS"
+  }
+}
